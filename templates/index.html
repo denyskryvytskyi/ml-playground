@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <h1>Digit Recognizer</h1>
+{% endblock %}
+
+{% block body %}
+<div class="img_loader">
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="img">Image</label>
+            <input type="file" class="form-control-file" name="img" accept="image/*" id="img"  aria-describedby="fileHelpId">
+            <small id="fileHelpId" class="form-text text-muted">Select Image</small>
+        </div>
+    
+        <input type="submit" value="Submit" class="btn btn-primary">
+    
+    </form>
+</div>
+
+<div class="predictions">
+    Prediction: {{digit_prediction}}
+</div>
+{% endblock %}
